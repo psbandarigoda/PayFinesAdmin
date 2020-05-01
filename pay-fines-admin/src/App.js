@@ -1,16 +1,31 @@
-import React, { useEffect, useState } from "react";
-import app from "./firebase.js";
 
-export const AuthContext = React.createContext();
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const App = ({ children }) => {
-    const [currentUser, setCurrentUser] = useState(null);
 
-    useEffect(() => {
-        app.auth().onAuthStateChanged(setCurrentUser);
-    }, []);
+import UserRegister from "./components/user_managment/register.component";
+import UserLogin from "./components/user_managment/login.component";
+import TopNavBar from "./components/include/topNavBar.component";
+import Footer from "./components/include/footer.component";
+import Home from "./components/home/home.component";
+import Logout from "./components/user_managment/logout.component";
+import Fines from "./components/Fines/fines.component";
 
-    return (<AuthContext.Provider value={{currentUser}}> hello {children} </AuthContext.Provider>);
-};
+
+function App() {
+    return (
+        <Router>
+            <TopNavBar />
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={UserLogin}/>
+            <Route path="/register" component={UserRegister}/>
+            <Route path="/logout" component={Logout} />
+            <Route path="/fines" component={Fines} />
+            <Footer/>
+        </Router>
+    );
+}
 
 export default App;
