@@ -1,4 +1,5 @@
-import {Component} from "react";
+import React, {Component} from "react";
+import {MDBTable, MDBTableBody, MDBTableHead} from 'mdbreact';
 
 
 export default class Fines extends Component{
