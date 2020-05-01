@@ -3,7 +3,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import UserRegister from "./components/user_managment/register.component";
 import UserLogin from "./components/user_managment/login.component";

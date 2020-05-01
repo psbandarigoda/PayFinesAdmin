@@ -1,6 +1,8 @@
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
+import 'firebase/auth'
 
-const firebaseConfig = {
+
+const config = {
     apiKey: "AIzaSyAlud5UlUUD3QN9qTsV8iUXp3qVXfmgYzw",
     authDomain: "pay-fines.firebaseapp.com",
     databaseURL: "https://pay-fines.firebaseio.com",
@@ -9,7 +11,7 @@ const firebaseConfig = {
     messagingSenderId: "906785021760",
     appId: "1:906785021760:web:b0b00b7040c0f45e7324a5"
 };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
+firebase.initializeApp(config);
 
 export default firebase;
