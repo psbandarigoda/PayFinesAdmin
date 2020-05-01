@@ -24,6 +24,9 @@ export default class UserRegister extends Component {
   constructor(props) {
     super(props);
 
+    // this.ref = firebase.database().ref(constants.pay-fines).orderByChild("Officers");
+
+
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangEmail = this.onChangEmail.bind(this);
     this.onChanagePassword = this.onChanagePassword.bind(this);
@@ -178,17 +181,44 @@ export default class UserRegister extends Component {
         email: this.state.email,
         password: this.state.password
       };
-      axios
-        .post(constants.url + "/user/add", newUser)
-        .then(res => {
-          console.log(res.data);
 
-          swal("Success", "User added sucessfully", "success");
+      this.ref.on('value', (snapshot)=>{
+        console.log(snapshot.val());
+
+        let Officers  = snapshot.val();
+        let newOfficer = [];
+
+        for( let officer in Officers ){
+          newOfficer.push({
+            id : officer,
+            fname : Officers[officer].fname,
+            lname : Officers[officer].lname,
+            email : Officers[officer].email,
+            mobile : Officers[officer].mobile
+
+          })
+
+        }
+
+        this.setState({
+          drivers : newOfficer
         })
-        .catch(err => {
-          swal("Error", err.response.data.error + "", "error");
-          console.log(err);
-        });
+      })
+
+      // console.log(this.state.buses);
+
+
+      // axios
+      //   .post(constants.url + "/user/add", newUser)
+      //   .then(res => {
+      //     console.log(res.data);
+      //
+      //     swal("Success", "User added sucessfully", "success");
+      //   })
+      //   .catch(err => {
+      //     swal("Error", err.response.data.error + "", "error");
+      //     console.log(err);
+      //   });
     }
   }
   isValid() {

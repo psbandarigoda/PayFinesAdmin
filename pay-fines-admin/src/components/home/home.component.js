@@ -17,7 +17,7 @@ export default class UserLogin extends Component {
   render() {
     return (
 
-     <div >
+     <div>
        <div className="bg">
           <div className="col-md-6">
             <MDBMask  className="flex-center flex-column text-white text-center">
