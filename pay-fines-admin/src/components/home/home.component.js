@@ -6,8 +6,7 @@ import {
 
 import app from '../firebase/firebase';
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Background from '../include/images/cct_background.jpg';
+
 
 import "../include/style.css";
 import swal from "sweetalert";
