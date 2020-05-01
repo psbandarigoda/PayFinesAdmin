@@ -3,7 +3,23 @@ import {MDBTable, MDBTableBody, MDBTableHead} from 'mdbreact';
 
 
 export default class Fines extends Component{
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            fileId: '',
+            file: '',
+            results: [],
+            total: '',
+            totalCs: '',
+            totalCtc: '',
+            totalCnc: '',
+            totalCi: '',
+            totalTW: '',
+            totalCps: '',
+            totalCr: ''
+        }
+    }
 
     render() {
         return (
