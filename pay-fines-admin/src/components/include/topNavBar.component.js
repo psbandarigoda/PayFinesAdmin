@@ -26,7 +26,7 @@ export default class TopNavbar extends Component {
   render() {
     if (localStorage.getItem('status')) {
       return (
-        <MDBNavbar color="primary-color-dark" dark expand="md">
+        <MDBNavbar color="primary-color-dark" dark expand="md" className="container-fluid">
           <MDBNavbarBrand>
             <Link to ="/"><strong className="white-text">Sri Lanka Police</strong></Link>
           </MDBNavbarBrand>
@@ -60,7 +60,8 @@ export default class TopNavbar extends Component {
           </MDBCollapse>
         </MDBNavbar>
       );
-    } else {
+    }
+    else {
       return <div />;
     }
   }

@@ -63,10 +63,10 @@ export default class UserLogin extends Component {
       if(user.email == 'galle@police.lk' && user.password == '123@123'){
         console.log(user.email);
           // localStorage.setItem('id',res.data._id);
-          localStorage.setItem('name',user.name);
+          localStorage.setItem('name','Galle Traffic Police');
           localStorage.setItem('email',user.email);
           localStorage.setItem('status',true);
-          this.props.history.push("/fines");
+          this.props.history.push("/home");
           window.location.reload();
       }else{
           // swal("Error", err.response.data.error + "", "error");

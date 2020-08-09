@@ -2,9 +2,20 @@ import React, {Component} from "react";
 import app from "../firebase/firebase";
 import swal from "sweetalert";
 import "../include/style.css";
-import {MDBBtn, MDBIcon} from "mdbreact";
+import {
+    MDBBtn,
+    MDBCollapse, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle,
+    MDBIcon, MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarNav,
+    MDBNavbarToggler,
+    MDBNavItem,
+    MDBNavLink
+} from "mdbreact";
 import {Navbar, Nav, NavItem } from 'react-bootstrap';
 import NavLink from "react-bootstrap/NavLink";
+import TopNavbar from "../include/topNavBar.component";
+import {Link} from "react-router-dom";
 
 const FinesTable = props => (
     <tr>
@@ -219,6 +230,9 @@ export default class Fines extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
+                <TopNavbar></TopNavbar>
+                </div>
+                <div className="row">
                     <Navbar brand='React-Bootstrap' className="container-fluid">
                         <Nav>
                             <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>
@@ -234,7 +248,19 @@ export default class Fines extends Component {
                     </Navbar>
                 </div>
                 <br/>
-                {/*<div>*/}
+
+                {/**/}
+                <div className="container">
+                <div className="row">
+                    <input id="dl" onChange={this.handleChange} value={this.state.contactNo} type="text"
+                           placeholder="Driving License" className='form-control col-md-2' />
+                    <MDBBtn className="col-md-1 btn btn-sm btn-outline-secondary"><MDBIcon icon="search"></MDBIcon></MDBBtn>
+                </div>
+                </div>
+                {/**/}
+
+                <br/>
+                <br/>
                 <div class="row">
                     {/*    <div class="col">*/}
                     {/*        <form className='form-group container' onSubmit={this.onSubmitDetails}>*/}

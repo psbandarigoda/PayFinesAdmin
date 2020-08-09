@@ -4,7 +4,7 @@ import {MDBBtn, MDBIcon, MDBMask} from "mdbreact";
 
 import "../include/style.css";
 
-export default class UserLogin extends Component {
+export default class Home extends Component {
 
     constructor(props) {
         super(props);

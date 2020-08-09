@@ -5,6 +5,7 @@ import swal from "sweetalert";
 import {Nav, Navbar} from "react-bootstrap";
 import NavLink from "react-bootstrap/NavLink";
 import {MDBBtn} from "mdbreact";
+import TopNavbar from "../include/topNavBar.component";
 
 const Employee = props => (
     <tr>
@@ -171,6 +172,9 @@ export default class Officer extends Component {
     render() {
         return (
             <div class="container-fluid">
+                <div className="row">
+                    <TopNavbar></TopNavbar>
+                </div>
                 <div className="row">
                     <Navbar brand='React-Bootstrap' className="container-fluid">
                         <Nav>

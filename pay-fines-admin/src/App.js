@@ -18,14 +18,14 @@ import Officer from "./components/Officer/officer.component";
 function App() {
     return (
         <Router>
-            <TopNavBar />
-            <Route exact path="/" component={Home} />
-            <Route path="/login" component={UserLogin}/>
+            {/*<TopNavBar/>*/}
+            <Route exact path="/" component={UserLogin} />
+            <Route path="/home" component={Home}/>
             <Route path="/register" component={UserRegister}/>
             <Route path="/logout" component={Logout} />
             <Route path="/fines" component={Fines} />
             <Route path="/officer" component={Officer} />
-            <Footer/>
+            {/*<Footer/>*/}
         </Router>
     );
 }
