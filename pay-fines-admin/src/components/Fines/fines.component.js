@@ -2,20 +2,10 @@ import React, {Component} from "react";
 import app from "../firebase/firebase";
 import swal from "sweetalert";
 import "../include/style.css";
-import {
-    MDBBtn,
-    MDBCollapse, MDBDropdown, MDBDropdownItem, MDBDropdownMenu, MDBDropdownToggle,
-    MDBIcon, MDBNavbar,
-    MDBNavbarBrand,
-    MDBNavbarNav,
-    MDBNavbarToggler,
-    MDBNavItem,
-    MDBNavLink
-} from "mdbreact";
-import {Navbar, Nav, NavItem } from 'react-bootstrap';
+import {MDBBtn, MDBIcon} from "mdbreact";
+import {Nav, Navbar} from 'react-bootstrap';
 import NavLink from "react-bootstrap/NavLink";
 import TopNavbar from "../include/topNavBar.component";
-import {Link} from "react-router-dom";
 
 const FinesTable = props => (
     <tr>
@@ -58,9 +48,13 @@ const singleFines = {
     action: 'add'
 }
 
+const options = [{key: 1, text: 'Choice 1', value: 1}, {key: 2, text: 'Choice 2', value: 2}]
+
+
 export default class Fines extends Component {
 
     singleFines;
+    searchDL;
 
     constructor(props) {
         super(props);
@@ -77,8 +71,12 @@ export default class Fines extends Component {
 
             fines: [],
 
-            action: 'add'
+            action: 'add',
         }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleChange2 = this.handleChange2.bind(this);
+        this.handleChange3 = this.handleChange3.bind(this);
     }
 
     componentDidMount() {
@@ -125,6 +123,111 @@ export default class Fines extends Component {
                 fines: newFines
             })
         })
+    }
+
+    searchByDl = () => {
+        this.finesRef.on('value', (snapshot) => {
+            let outFines = snapshot.val();
+            let newFines = [];
+
+            console.log("vvvvvvvvvvvvvvvv: " + this.state.value);
+
+
+            for (let fines in outFines) {
+                if (outFines[fines].dl === this.state.value) {
+                    console.log("ccccc: " + outFines[fines].dl + "===" + this.state.value);
+                    newFines.push({
+                        id: fines,
+                        dl: outFines[fines].dl,
+                        name: outFines[fines].name,
+                        officerId: outFines[fines].officerId,
+                        total: outFines[fines].total,
+                        status: outFines[fines].status
+                    })
+                } else {
+                    console.log("empty=====");
+                }
+
+            }
+
+            this.setState({
+                fines: newFines
+            })
+        })
+    }
+
+    searchByOfficer = () => {
+        this.finesRef.on('value', (snapshot) => {
+            let outFines = snapshot.val();
+            let newFines = [];
+
+            console.log("officer id reseave: " + this.state.officer);
+
+
+            for (let fines in outFines) {
+                if (outFines[fines].officerId === this.state.officer) {
+                    console.log("check 2 : " + outFines[fines].officerId + "===" + this.state.officer);
+                    newFines.push({
+                        id: fines,
+                        dl: outFines[fines].dl,
+                        name: outFines[fines].name,
+                        officerId: outFines[fines].officerId,
+                        total: outFines[fines].total,
+                        status: outFines[fines].status
+                    })
+                } else {
+                    console.log("empty=====");
+                }
+
+            }
+
+            this.setState({
+                fines: newFines
+            })
+        })
+    }
+
+    searchByPaidStatus = () => {
+        this.finesRef.on('value', (snapshot) => {
+            let outFines = snapshot.val();
+            let newFines = [];
+
+            console.log("paid status: " + this.state.paidStatus);
+
+
+            for (let fines in outFines) {
+                if (outFines[fines].status === this.state.paidStatus) {
+                    console.log("check 2 : " + outFines[fines].status + "===" + this.state.paidStatus);
+                    newFines.push({
+                        id: fines,
+                        dl: outFines[fines].dl,
+                        name: outFines[fines].name,
+                        officerId: outFines[fines].officerId,
+                        total: outFines[fines].total,
+                        status: outFines[fines].status
+                    })
+                } else {
+                    console.log("empty=====");
+                }
+
+            }
+
+            this.setState({
+                fines: newFines
+            })
+        })
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleChange2(event) {
+        this.setState({officer: event.target.value});
+    }
+
+    handleChange3(event) {
+        this.setState({paidStatus: event.target.value});
     }
 
     // onSubmitDetails = (e) => {
@@ -251,11 +354,35 @@ export default class Fines extends Component {
 
                 {/**/}
                 <div className="container">
-                <div className="row">
-                    <input id="dl" onChange={this.handleChange} value={this.state.contactNo} type="text"
-                           placeholder="Driving License" className='form-control col-md-2' />
-                    <MDBBtn className="col-md-1 btn btn-sm btn-outline-secondary"><MDBIcon icon="search"></MDBIcon></MDBBtn>
-                </div>
+                    <div className="row">
+                        <div className="col-3">
+                            <form className='form-group container'>
+                                <input id="searchDL" onChange={this.handleChange} value={this.state.value} type="text"
+                                       placeholder="Driving License" className='form-control'/>
+                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByDl}>
+                                    <MDBIcon icon="search"/></MDBBtn>
+                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
+                            </form>
+                        </div>
+                        <div className="col-3">
+                            <form className='form-group container'>
+                                <input id="officer" onChange={this.handleChange2} value={this.state.officer} type="text"
+                                       placeholder="Officer RegNo" className='form-control'/>
+                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByOfficer}>
+                                    <MDBIcon icon="search"/></MDBBtn>
+                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
+                            </form>
+                        </div>
+                        <div className="col-3">
+                            <form className='form-group container'>
+                                <input id="paidStatus" onChange={this.handleChange3} value={this.state.paidStatus} type="text"
+                                       placeholder="Paid Status" className='form-control'/>
+                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByPaidStatus}>
+                                    <MDBIcon icon="search"/></MDBBtn>
+                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 {/**/}
 
