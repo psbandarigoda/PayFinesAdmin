@@ -181,7 +181,7 @@ export default class Officer extends Component {
                             <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>
                             <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Traffic Officers Details</NavLink>
                             <NavLink href="/fines">Fines</NavLink>
-                            <NavLink to='/#'>Fine'sMoreDetails</NavLink>
+                            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>
                             <NavLink href="/officer" style={{fontWeight: "bold"}}>Officer</NavLink>
                             <NavLink to='/#'>Rules</NavLink>
                             <NavLink to='/#'>About</NavLink>

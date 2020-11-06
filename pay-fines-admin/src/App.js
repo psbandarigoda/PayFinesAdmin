@@ -13,6 +13,7 @@ import Home from "./components/home/home.component";
 import Logout from "./components/user_managment/logout.component";
 import Fines from "./components/Fines/fines.component";
 import Officer from "./components/Officer/officer.component";
+import FineMoreDetails from "./components/FineMoreDetails/FineMoreDetails.component";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/logout" component={Logout} />
             <Route path="/fines" component={Fines} />
             <Route path="/officer" component={Officer} />
+            <Route path="/fineMoreDetails" component={FineMoreDetails} />
             {/*<Footer/>*/}
         </Router>
     );

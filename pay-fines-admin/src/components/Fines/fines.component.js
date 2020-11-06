@@ -6,6 +6,9 @@ import {MDBBtn, MDBIcon} from "mdbreact";
 import {Nav, Navbar} from 'react-bootstrap';
 import NavLink from "react-bootstrap/NavLink";
 import TopNavbar from "../include/topNavBar.component";
+import * as Route from "react-router-dom";
+import FineMoreDetails from "../FineMoreDetails/FineMoreDetails.component";
+import * as queryString from "@babel/core";
 
 const FinesTable = props => (
     <tr>
@@ -16,10 +19,11 @@ const FinesTable = props => (
         <td>{props.finesTable.status}</td>
         <td className='align-content-center'>
             <div className='btn-group'>
+                <div><NavLink href={'/fineMoreDetails?id=' + props.finesTable.dl}>
                 <button type="button" onClick={props.viewFines} className='btn btn-primary'><i
-                    className="fa fa-eye"></i></button>
-                <button type="button" onClick={props.deleteFines} className='btn btn-danger'><i
-                    className="fa fa-trash"></i></button>
+                    className="fa fa-eye"></i></button></NavLink></div>
+                <div style={{marginTop:9}}><button type="button" onClick={props.deleteFines} className='btn btn-danger'><i
+                    className="fa fa-trash"></i></button></div>
             </div>
         </td>
     </tr>
@@ -306,6 +310,8 @@ export default class Fines extends Component {
 
     onViewFines = (index, obj, e) => {
 
+        // Route.NavLink('/fineMoreDetails',FineMoreDetails);
+
         // this.singleFines = obj;
 
         // this.singleFines.id = obj.id;
@@ -314,10 +320,10 @@ export default class Fines extends Component {
         // this.singleFines.officerId = obj.officerId;
         // this.singleFines.total = obj.total;
         // this.singleFines.status = obj.status;
-        return this.state.fines.map((index, obj) => {
-        return <SingleFine finesTable={obj} key={index}/>
-        })
-        console.log(this.singleFines.total)
+        // return this.state.fines.map((index, obj) => {
+        // return <SingleFine finesTable={obj} key={index}/>
+        // })
+        // console.log(this.singleFines.total)
 
     }
 
@@ -325,7 +331,7 @@ export default class Fines extends Component {
         return this.state.fines.map((currentFines, i) => {
             return <FinesTable finesTable={currentFines} key={i}
                                deleteFines={this.onDeleteFines.bind(this, i, currentFines)}
-                               viewFines={this.onViewFines.bind(this, i, currentFines)}/>
+                               viewFines/>
         })
     }
 
@@ -341,7 +347,7 @@ export default class Fines extends Component {
                             <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>
                             <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Fines Details</NavLink>
                             <NavLink href="/fines" style={{fontWeight: "bold"}}>Fines</NavLink>
-                            <NavLink to='/#'>Fine'sMoreDetails</NavLink>
+                            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>
                             <NavLink href="/officer">Officer</NavLink>
                             <NavLink to='/#'>Rules</NavLink>
                             <NavLink to='/#'>About</NavLink>
@@ -379,6 +385,13 @@ export default class Fines extends Component {
                                        placeholder="Paid Status" className='form-control'/>
                                 <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByPaidStatus}>
                                     <MDBIcon icon="search"/></MDBBtn>
+                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
+                            </form>
+                        </div>
+                        <div className="col-3">
+                            <form className='form-group container'>
+                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.loadAllFines}>Sync All
+                                    <MDBIcon icon="sync"/></MDBBtn>
                                 {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
                             </form>
                         </div>
