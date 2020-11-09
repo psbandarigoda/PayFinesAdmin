@@ -41,11 +41,11 @@ export default class SecondNavBar extends Component {
             this.officerLink = true;
         }else if(window.location.pathname === "/fineMoreDetails"){
             this.rulesLink = true;
-        }else if(window.location.pathname === "/fineMoreDetails"){
+        }else if(window.location.pathname === "/about"){
             this.aboutLink = true;
-        }else if(window.location.pathname === "/fineMoreDetails"){
+        }else if(window.location.pathname === "/contact"){
             this.contactLink = true;
-        }else if(window.location.pathname === "/fineMoreDetails"){
+        }else if(window.location.pathname === "/faq"){
             this.FAQLink = true;
         }
 
@@ -70,12 +70,12 @@ export default class SecondNavBar extends Component {
                             </MDBNavItem>
                             <MDBNavItem/>
                             <MDBNavLink className="col-md-2" to="/fines" active={this.fineLink}>Fines</MDBNavLink>
-                            <MDBNavLink className="col-md-3" to='/fineMoreDetails' active={this.fineMoreDetailsLink}>Fine'sMoreDetails</MDBNavLink>
-                            <MDBNavLink className="col-md-2" to="/officer" active={false}>Officer</MDBNavLink>
+                            <MDBNavLink className="col-md-4" to='/fineMoreDetails' active={this.fineMoreDetailsLink}>Fine'sMoreDetails</MDBNavLink>
+                            <MDBNavLink className="col-md-2" to="/officer" active={this.officerLink}>Officer</MDBNavLink>
                             {/*<MDBNavLink className="col-md-2" to='/Contact' active={false}>Rules</MDBNavLink>*/}
-                            <MDBNavLink className="col-md-2" to='/Contact' active={false}>About</MDBNavLink>
-                            <MDBNavLink className="col-md-2" to='/Contact' active={false}>Contact</MDBNavLink>
-                            <MDBNavLink className="col-md-2" to='/Contact' active={false}>FAQ</MDBNavLink>
+                            <MDBNavLink className="col-md-2" to='/about' active={this.aboutLink}>About</MDBNavLink>
+                            <MDBNavLink className="col-md-2" to='/contact' active={this.contactLink}>Contact</MDBNavLink>
+                            <MDBNavLink className="col-md-2" to='/faq' active={this.FAQLink}>FAQ</MDBNavLink>
                         </MDBNavbarNav>
                         <MDBNavbarNav >
 

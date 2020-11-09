@@ -186,9 +186,9 @@ export default class Officer extends Component {
                 {/*            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>*/}
                 {/*            <NavLink href="/officer" style={{fontWeight: "bold"}}>Officer</NavLink>*/}
                 {/*            <NavLink to='/#'>Rules</NavLink>*/}
-                {/*            <NavLink to='/#'>About</NavLink>*/}
+                {/*            <NavLink to='/#'>Contact</NavLink>*/}
                 {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
-                {/*            <NavLink to='/Contact'>FAQ</NavLink>*/}
+                {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
                 {/*        </Nav>*/}
                 {/*    </Navbar>*/}
                 {/*</div>*/}

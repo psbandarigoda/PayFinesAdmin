@@ -55,7 +55,6 @@ export default class TopNavbar extends Component {
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="dropdown-default">
                     <MDBDropdownItem href="/logout">Logout</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
                   </MDBDropdownMenu>
                 </MDBDropdown>
               </MDBNavItem>

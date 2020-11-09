@@ -362,9 +362,9 @@ export default class Fines extends Component {
                 {/*            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>*/}
                 {/*            <NavLink href="/officer">Officer</NavLink>*/}
                 {/*            <NavLink to='/#'>Rules</NavLink>*/}
-                {/*            <NavLink to='/#'>About</NavLink>*/}
+                {/*            <NavLink to='/#'>Contact</NavLink>*/}
                 {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
-                {/*            <NavLink to='/Contact'>FAQ</NavLink>*/}
+                {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
                 {/*        </Nav>*/}
                 {/*    </Navbar>*/}
                 {/*</div>*/}

@@ -215,9 +215,9 @@ export default class FineMoreDetails extends Component {
                 {/*            <NavLink href='/fineMoreDetails' style={{fontWeight: "bold"}}>Fine'sMoreDetails</NavLink>*/}
                 {/*            <NavLink href="/officer">Officer</NavLink>*/}
                 {/*            <NavLink to='/#'>Rules</NavLink>*/}
-                {/*            <NavLink to='/#'>About</NavLink>*/}
+                {/*            <NavLink to='/#'>Contact</NavLink>*/}
                 {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
-                {/*            <NavLink to='/Contact'>FAQ</NavLink>*/}
+                {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
                 {/*        </Nav>*/}
                 {/*    </Navbar>*/}
                 {/*</div>*/}
@@ -227,20 +227,27 @@ export default class FineMoreDetails extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-4">
-                            <card>
+                            <div className="card">
+                                <div className="card-header"> Search By Fine ID </div>
+                                <div className="card-body">
                                 <input id="searchDL" onChange={this.handleChange} value={this.state.value} type="text"
                                        placeholder="Driving License"/>
                                 <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByDlCustom}>
                                     <MDBIcon icon="search"/></MDBBtn>
                                 {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
-                            </card>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div><br/>
 
                 {/**/}
                 <div className="container">
-                    {this.finesList()}
+                    <div className="row">
+                        <div className="col-12">
+                        {this.finesList()}
+                        </div>
+                    </div>
                 </div>
                 <br/>
                 <br/>
