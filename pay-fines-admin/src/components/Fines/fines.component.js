@@ -9,6 +9,7 @@ import TopNavbar from "../include/topNavBar.component";
 import * as Route from "react-router-dom";
 import FineMoreDetails from "../FineMoreDetails/FineMoreDetails.component";
 import * as queryString from "@babel/core";
+import SecondNavBar from "../include/SecondNavBar";
 
 const FinesTable = props => (
     <tr>
@@ -134,6 +135,9 @@ export default class Fines extends Component {
             let outFines = snapshot.val();
             let newFines = [];
 
+            this.state.officer = "";
+            this.state.paidStatus = "";
+
             console.log("vvvvvvvvvvvvvvvv: " + this.state.value);
 
 
@@ -165,6 +169,9 @@ export default class Fines extends Component {
             let outFines = snapshot.val();
             let newFines = [];
 
+            this.state.value = "";
+            this.state.paidStatus = "";
+
             console.log("officer id reseave: " + this.state.officer);
 
 
@@ -195,6 +202,9 @@ export default class Fines extends Component {
         this.finesRef.on('value', (snapshot) => {
             let outFines = snapshot.val();
             let newFines = [];
+
+            this.state.value = "";
+            this.state.officer = "";
 
             console.log("paid status: " + this.state.paidStatus);
 
@@ -337,64 +347,58 @@ export default class Fines extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid cusPage">
                 <div className="row">
-                <TopNavbar></TopNavbar>
+                <TopNavbar/>
+                <SecondNavBar/>
                 </div>
-                <div className="row">
-                    <Navbar brand='React-Bootstrap' className="container-fluid">
-                        <Nav>
-                            <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>
-                            <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Fines Details</NavLink>
-                            <NavLink href="/fines" style={{fontWeight: "bold"}}>Fines</NavLink>
-                            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>
-                            <NavLink href="/officer">Officer</NavLink>
-                            <NavLink to='/#'>Rules</NavLink>
-                            <NavLink to='/#'>About</NavLink>
-                            <NavLink to='/Contact'>Contact</NavLink>
-                            <NavLink to='/Contact'>FAQ</NavLink>
-                        </Nav>
-                    </Navbar>
-                </div>
+                {/*<div className="row">*/}
+                {/*    <Navbar brand='React-Bootstrap' className="container-fluid">*/}
+                {/*        <Nav>*/}
+                {/*            <MDBBtn href="/fines" className="col-md-2 btn-round mr-1 btn btn-info">Home*/}
+                {/*            <MDBIcon icon="home"/></MDBBtn>*/}
+                {/*            <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Fines Details</NavLink>*/}
+                {/*            <NavLink href="/fines" style={{fontWeight: "bold"}}>Fines</NavLink>*/}
+                {/*            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>*/}
+                {/*            <NavLink href="/officer">Officer</NavLink>*/}
+                {/*            <NavLink to='/#'>Rules</NavLink>*/}
+                {/*            <NavLink to='/#'>About</NavLink>*/}
+                {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
+                {/*            <NavLink to='/Contact'>FAQ</NavLink>*/}
+                {/*        </Nav>*/}
+                {/*    </Navbar>*/}
+                {/*</div>*/}
                 <br/>
 
                 {/**/}
                 <div className="container">
                     <div className="row">
-                        <div className="col-3">
-                            <form className='form-group container'>
+                        <div className="col-4">
                                 <input id="searchDL" onChange={this.handleChange} value={this.state.value} type="text"
-                                       placeholder="Driving License" className='form-control'/>
-                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByDl}>
+                                       placeholder="Driving License"/>
+                                <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByDl}>
                                     <MDBIcon icon="search"/></MDBBtn>
                                 {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
-                            </form>
                         </div>
-                        <div className="col-3">
-                            <form className='form-group container'>
+                        <div className="col-4">
                                 <input id="officer" onChange={this.handleChange2} value={this.state.officer} type="text"
-                                       placeholder="Officer RegNo" className='form-control'/>
-                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByOfficer}>
+                                       placeholder="Officer RegNo"/>
+                                <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByOfficer}>
                                     <MDBIcon icon="search"/></MDBBtn>
                                 {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
-                            </form>
                         </div>
-                        <div className="col-3">
-                            <form className='form-group container'>
+                        <div className="col-4">
                                 <input id="paidStatus" onChange={this.handleChange3} value={this.state.paidStatus} type="text"
-                                       placeholder="Paid Status" className='form-control'/>
-                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.searchByPaidStatus}>
+                                       placeholder="Paid Status"/>
+                                <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByPaidStatus}>
                                     <MDBIcon icon="search"/></MDBBtn>
                                 {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
-                            </form>
                         </div>
-                        <div className="col-3">
-                            <form className='form-group container'>
-                                <MDBBtn className="btn btn-sm btn-outline-secondary" onClick={this.loadAllFines}>Sync All
-                                    <MDBIcon icon="sync"/></MDBBtn>
-                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
-                            </form>
-                        </div>
+                        {/*<div className="col-2">*/}
+                        {/*        <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.loadAllFines}>Sync All*/}
+                        {/*            <MDBIcon icon="sync"/></MDBBtn>*/}
+                        {/*        /!*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*!/*/}
+                        {/*</div>*/}
                     </div>
                 </div>
                 {/**/}

@@ -1,12 +1,10 @@
 import React, {Component} from "react";
 import swal from "sweetalert";
 import {MDBBtn, MDBIcon} from "mdbreact";
-import NavLink from "react-bootstrap/NavLink";
 import TopNavbar from "../include/topNavBar.component";
-import {Nav, Navbar} from 'react-bootstrap';
 import "../include/style.css";
 import app from "../firebase/firebase";
-import * as queryString from "@babel/core";
+import SecondNavBar from "../include/SecondNavBar";
 
 
 const FinesTable = props => (
@@ -76,6 +74,8 @@ export default class FineMoreDetails extends Component {
 
             action: 'add',
         }
+        this.handleChange = this.handleChange.bind(this);
+
     }
 
 
@@ -139,6 +139,11 @@ export default class FineMoreDetails extends Component {
         })
     }
 
+    searchByDlCustom = () => {
+        this.searchDL = this.state.value;
+        this.searchByDl();
+    }
+
 
     handleChange(event) {
         this.setState({value: event.target.value});
@@ -197,36 +202,45 @@ export default class FineMoreDetails extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    <TopNavbar></TopNavbar>
+                    <TopNavbar/>
+                    <SecondNavBar/>
+
                 </div>
-                <div className="row">
-                    <Navbar brand='React-Bootstrap' className="container-fluid">
-                        <Nav>
-                            <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>
-                            <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Fines Details</NavLink>
-                            <NavLink href="/fines">Fines</NavLink>
-                            <NavLink href='/fineMoreDetails' style={{fontWeight: "bold"}}>Fine'sMoreDetails</NavLink>
-                            <NavLink href="/officer">Officer</NavLink>
-                            <NavLink to='/#'>Rules</NavLink>
-                            <NavLink to='/#'>About</NavLink>
-                            <NavLink to='/Contact'>Contact</NavLink>
-                            <NavLink to='/Contact'>FAQ</NavLink>
-                        </Nav>
-                    </Navbar>
-                </div>
+                {/*<div className="row">*/}
+                {/*    <Navbar brand='React-Bootstrap' className="container-fluid">*/}
+                {/*        <Nav>*/}
+                {/*            <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>*/}
+                {/*            <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Fines Details</NavLink>*/}
+                {/*            <NavLink href="/fines">Fines</NavLink>*/}
+                {/*            <NavLink href='/fineMoreDetails' style={{fontWeight: "bold"}}>Fine'sMoreDetails</NavLink>*/}
+                {/*            <NavLink href="/officer">Officer</NavLink>*/}
+                {/*            <NavLink to='/#'>Rules</NavLink>*/}
+                {/*            <NavLink to='/#'>About</NavLink>*/}
+                {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
+                {/*            <NavLink to='/Contact'>FAQ</NavLink>*/}
+                {/*        </Nav>*/}
+                {/*    </Navbar>*/}
+                {/*</div>*/}
                 <br/>
 
                 {/**/}
                 <div className="container">
+                    <div className="row">
+                        <div className="col-4">
+                            <card>
+                                <input id="searchDL" onChange={this.handleChange} value={this.state.value} type="text"
+                                       placeholder="Driving License"/>
+                                <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByDlCustom}>
+                                    <MDBIcon icon="search"/></MDBBtn>
+                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
+                            </card>
+                        </div>
+                    </div>
+                </div>
+
+                {/**/}
+                <div className="container">
                     {this.finesList()}
-                {/*    <div className="row">*/}
-                {/*        <div className="card">*/}
-                {/*            <div className="card-header">  Fine Details </div>*/}
-                {/*            <div className="card-body"> DL : {{}} </div>*/}
-                {/*            <div className="card-body"> name : {{}} </div>*/}
-                {/*            <div className="card-body"> Officer : {{}} </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
                 </div>
                 <br/>
                 <br/>

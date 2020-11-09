@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "../include/style.css";
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -14,6 +15,7 @@ import {
   MDBDropdownItem,
   MDBIcon
 } from "mdbreact";
+import {Image} from "react-bootstrap";
 
 export default class TopNavbar extends Component {
   state = {
@@ -28,6 +30,7 @@ export default class TopNavbar extends Component {
       return (
         <MDBNavbar color="primary-color-dark" dark expand="md" className="container-fluid">
           <MDBNavbarBrand>
+            <Image source={('images/sri_lanka_police_logo.png')} />
             <Link to ="/"><strong className="white-text">Sri Lanka Police</strong></Link>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
@@ -35,16 +38,16 @@ export default class TopNavbar extends Component {
             <MDBNavbarNav left>
             </MDBNavbarNav>
             <MDBNavbarNav right>
-              <MDBNavItem>
-                <MDBNavLink className="waves-effect waves-light" to="#!">
-                  <MDBIcon fab icon="twitter" />
-                </MDBNavLink>
-              </MDBNavItem>
-              <MDBNavItem>
-                <MDBNavLink className="waves-effect waves-light" to="#!">
-                  <MDBIcon fab icon="google-plus-g" />
-                </MDBNavLink>
-              </MDBNavItem>
+              {/*<MDBNavItem>*/}
+              {/*  <MDBNavLink className="waves-effect waves-light" to="#!">*/}
+              {/*    <MDBIcon fab icon="twitter" />*/}
+              {/*  </MDBNavLink>*/}
+              {/*</MDBNavItem>*/}
+              {/*<MDBNavItem>*/}
+              {/*  <MDBNavLink className="waves-effect waves-light" to="#!">*/}
+              {/*    <MDBIcon fab icon="google-plus-g" />*/}
+              {/*  </MDBNavLink>*/}
+              {/*</MDBNavItem>*/}
               <MDBNavItem>
                 <MDBDropdown>
                   <MDBDropdownToggle nav caret>

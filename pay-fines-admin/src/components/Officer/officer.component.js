@@ -6,6 +6,7 @@ import {Nav, Navbar} from "react-bootstrap";
 import NavLink from "react-bootstrap/NavLink";
 import {MDBBtn} from "mdbreact";
 import TopNavbar from "../include/topNavBar.component";
+import SecondNavBar from "../include/SecondNavBar";
 
 const Employee = props => (
     <tr>
@@ -173,23 +174,24 @@ export default class Officer extends Component {
         return (
             <div class="container-fluid">
                 <div className="row">
-                    <TopNavbar></TopNavbar>
+                    <TopNavbar/>
+                    <SecondNavBar/>
                 </div>
-                <div className="row">
-                    <Navbar brand='React-Bootstrap' className="container-fluid">
-                        <Nav>
-                            <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>
-                            <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Traffic Officers Details</NavLink>
-                            <NavLink href="/fines">Fines</NavLink>
-                            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>
-                            <NavLink href="/officer" style={{fontWeight: "bold"}}>Officer</NavLink>
-                            <NavLink to='/#'>Rules</NavLink>
-                            <NavLink to='/#'>About</NavLink>
-                            <NavLink to='/Contact'>Contact</NavLink>
-                            <NavLink to='/Contact'>FAQ</NavLink>
-                        </Nav>
-                    </Navbar>
-                </div>
+                {/*<div className="row">*/}
+                {/*    <Navbar brand='React-Bootstrap' className="container-fluid">*/}
+                {/*        <Nav>*/}
+                {/*            <MDBBtn href="/fines" className="col-md-2 btn btn-sm btn-outline-secondary">Home</MDBBtn>*/}
+                {/*            <NavLink className="col-md-6" style={{fontSize:"large", fontWeight: "bold"}}>Traffic Officers Details</NavLink>*/}
+                {/*            <NavLink href="/fines">Fines</NavLink>*/}
+                {/*            <NavLink href='/fineMoreDetails'>Fine'sMoreDetails</NavLink>*/}
+                {/*            <NavLink href="/officer" style={{fontWeight: "bold"}}>Officer</NavLink>*/}
+                {/*            <NavLink to='/#'>Rules</NavLink>*/}
+                {/*            <NavLink to='/#'>About</NavLink>*/}
+                {/*            <NavLink to='/Contact'>Contact</NavLink>*/}
+                {/*            <NavLink to='/Contact'>FAQ</NavLink>*/}
+                {/*        </Nav>*/}
+                {/*    </Navbar>*/}
+                {/*</div>*/}
                 <br/>
 
                 <div class="row">
