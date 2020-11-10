@@ -245,7 +245,9 @@ export default class FineMoreDetails extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                        {this.finesList()}
+                            <div className="container">
+                            {this.finesList()}
+                            </div>
                         </div>
                     </div>
                 </div>
