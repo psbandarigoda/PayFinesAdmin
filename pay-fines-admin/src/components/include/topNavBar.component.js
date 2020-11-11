@@ -30,8 +30,8 @@ export default class TopNavbar extends Component {
       return (
         <MDBNavbar color="primary-color-dark" dark expand="md" className="container-fluid">
           <MDBNavbarBrand>
-            <Image source={('images/sri_lanka_police_logo.png')} />
-            <Link to ="/"><strong className="white-text">Sri Lanka Police</strong></Link>
+            {/*<MDBNavbarBrand class="logo"/>*/}
+            <Link to ="/fines"><strong className="white-text">Sri Lanka Police</strong></Link>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

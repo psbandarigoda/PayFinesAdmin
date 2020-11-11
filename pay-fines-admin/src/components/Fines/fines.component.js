@@ -12,7 +12,7 @@ import * as queryString from "@babel/core";
 import SecondNavBar from "../include/SecondNavBar";
 
 const FinesTable = props => (
-    <tr>
+    <tr className="ctable">
         <td>{props.finesTable.dl}</td>
         <td>{props.finesTable.name}</td>
         <td>{props.finesTable.officerId}</td>

@@ -5,6 +5,7 @@ import TopNavbar from "../include/topNavBar.component";
 import "../include/style.css";
 import app from "../firebase/firebase";
 import SecondNavBar from "../include/SecondNavBar";
+import {Image} from "react-bootstrap";
 
 
 const FinesTable = props => (
@@ -200,7 +201,7 @@ export default class FineMoreDetails extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid cusPage">
                 <div className="row">
                     <TopNavbar/>
                     <SecondNavBar/>
@@ -227,17 +228,18 @@ export default class FineMoreDetails extends Component {
                 <h3 style={{"marginBottom":"30"}}><span className="turquoise">Find More Details</span> of Fine</h3>
                 <br/>
 
-                <div className="container">
+                <div className="container" >
                     <div className="row">
                         <div className="col-4">
                             <div className="card">
-                                <div className="card-header"> Search By Fine ID </div>
+                                <div className="card-header"> Search By Fine ID</div>
                                 <div className="card-body">
-                                <input id="searchDL" onChange={this.handleChange} value={this.state.value} type="text"
-                                       placeholder="Driving License"/>
-                                <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByDlCustom}>
-                                    <MDBIcon icon="search"/></MDBBtn>
-                                {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
+                                    <input id="searchDL" onChange={this.handleChange} value={this.state.value}
+                                           type="text"
+                                           placeholder="Driving License"/>
+                                    <MDBBtn className="btn-round mr-1 btn btn-default" onClick={this.searchByDlCustom}>
+                                        <MDBIcon icon="search"/></MDBBtn>
+                                    {/*    <input type="submit" className="btn btn-secondary" value="Submit Details"/>*/}
                                 </div>
                             </div>
                         </div>

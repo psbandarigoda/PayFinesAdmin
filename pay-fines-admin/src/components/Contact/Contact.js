@@ -23,7 +23,7 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid cusPage">
                 <div className="row">
                     <TopNavbar/>
                     <SecondNavBar/>

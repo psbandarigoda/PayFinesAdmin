@@ -172,7 +172,7 @@ export default class Officer extends Component {
 
     render() {
         return (
-            <div class="container-fluid">
+            <div class="container-fluid cusPage">
                 <div className="row">
                     <TopNavbar/>
                     <SecondNavBar/>

@@ -25,7 +25,7 @@ export default class About extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid cusPage">
                 <div className="row">
                     <TopNavbar/>
                     <SecondNavBar/>
@@ -43,7 +43,7 @@ export default class About extends Component {
                         </div>
 
                         <div>
-                            <p></p>
+                            <p/>
                             <h1 align='center' style={{color: "#0040ff"}}> Automated Traffic Fine Payment System </h1>
                             <h2 align='center'> Sri Lanka Police Department</h2>
                             <h3 align='center'>
