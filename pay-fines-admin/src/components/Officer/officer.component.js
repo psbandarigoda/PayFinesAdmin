@@ -193,6 +193,9 @@ export default class Officer extends Component {
                 {/*    </Navbar>*/}
                 {/*</div>*/}
                 <br/>
+                <h3 ><span className="turquoise">Officers' Administrating </span></h3>
+                <br/>
+
 
                 <div class="row">
                     <div class="col-4">

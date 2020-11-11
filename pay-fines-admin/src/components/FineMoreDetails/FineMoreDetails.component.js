@@ -224,6 +224,9 @@ export default class FineMoreDetails extends Component {
                 <br/>
 
                 {/**/}
+                <h3 style={{"marginBottom":"30"}}><span className="turquoise">Find More Details</span> of Fine</h3>
+                <br/>
+
                 <div className="container">
                     <div className="row">
                         <div className="col-4">

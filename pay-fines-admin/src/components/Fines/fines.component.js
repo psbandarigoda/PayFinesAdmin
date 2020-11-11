@@ -371,6 +371,8 @@ export default class Fines extends Component {
                 <br/>
 
                 {/**/}
+                <h3><span className="turquoise">Fine Details</span></h3>
+                <br/>
                 <div className="container">
                     <div className="row">
                         <div className="col-4">

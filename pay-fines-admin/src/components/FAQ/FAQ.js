@@ -34,6 +34,9 @@ export default class FAQ extends Component {
                 <br/>
 
                 {/**/}
+                <h2><span className="turquoise">FAQ</span></h2>
+                <br/>
+
                 <div className="container">
                     <div className="row">
 
