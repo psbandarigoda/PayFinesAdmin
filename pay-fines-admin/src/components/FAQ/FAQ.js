@@ -37,37 +37,48 @@ export default class FAQ extends Component {
                 <div className="container">
                     <div className="row">
 
-                        <h2>Frequently Asked Questions</h2>
+
+                        <p> </p>
 
                         <div class="accordion">
                             <div class="accordion-item">
-                                <a>What can JavaScript Do?</a>
+                                <h4> <b> 1.	How to add a new police officer into the system?</b> </h4>
                                 <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    <p> 1.1	Go to the “Officer” tab.<br/>
+                                        1.2	Fill the details<br/>
+                                        1.3	Click “SUBMIT DETAILS”</p>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <a>How JavaScript Can Modify HTML and CSS Values?</a>
+                                <h4> <b> 2.	How to remove a police officer from the system? </b> </h4>
                                 <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    <p> 2.1	Go to the “Officer” tab.<br/>
+                                        2.2	Click “Delete” button.</p>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <a>What Is SVG?</a>
+                                <h4> <b> 3.	How to edit details of an officer? </b> </h4>
                                 <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    <p>3.1	Go to the “Officer” tab.<br/>
+                                        3.2	Click “Edit” button.
+                                    </p>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <a>Is FAQ Section Matters In Website?</a>
+                                <h4><b> 4.	How to change my password? </b> </h4>
                                 <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    <p>4.1	Go to the “Officer” tab.<br/>
+                                        4.2	Click “Edit” button.
+
+                                    </p>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <a>How To Create a Light FAQ Element?</a>
+                                <h4> <b> 5.	How to view more details about fine details.? </b> </h4>
                                 <div class="content">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                                    <p> 5.1 Go to the "Fines" Tab. <br/>
+                                        5.2 Click on the view button.
+                                    </p>
                                 </div>
                             </div>
                         </div>

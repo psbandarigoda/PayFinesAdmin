@@ -36,36 +36,36 @@ export default class Contact extends Component {
                     <div className="row">
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  GALLE </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: gallemain@police.lk </p>
+                                    <p> Phone : 0912222223 </p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  HIKKADUWA </div>
                                 <div className="card-body">
                                     <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Phone : 0912222224 </p>
                                 </div>
                             </div>                        </div>
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  BADDEGAME </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: baddegama22@police.lk </p>
+                                    <p> Phone : 0912222225 </p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  HABARADUWA </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: habaraduwa@police.lk </p>
+                                    <p> Phone : 0912222226 </p>
                                 </div>
                             </div>
                         </div>
@@ -74,37 +74,37 @@ export default class Contact extends Component {
                     <div className="row">
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  AMBALANGODA </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: ambalangoda@police.lk </p>
+                                    <p> Phone : 0912222227 </p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  MAPALAGAME </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: mapalagame@police.lk </p>
+                                    <p> Phone : 0912222228 </p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  NAGODA </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: nagoda@police.lk </p>
+                                    <p> Phone : 0912222229 </p>
                                 </div>
                             </div>
                         </div>
                         <div className="col-3">
                             <div className="card">
-                                <div className="card-header">  Hikkaduwa </div>
+                                <div className="card-header">  PODDALA </div>
                                 <div className="card-body">
-                                    <p> Email: hikkaduwa@police.lk </p>
-                                    <p> Phone : 0912269876 </p>
+                                    <p> Email: poddala@police.lk </p>
+                                    <p> Phone : 0912222230 </p>
                                 </div>
                             </div>
                         </div>
